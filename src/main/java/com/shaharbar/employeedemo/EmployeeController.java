@@ -20,7 +20,7 @@ public class EmployeeController {
 	@Autowired 
 	EmployeeRepository employeeRepo;
 	
-	@RequestMapping ("/greeting")
+	@RequestMapping (value = "/greeting", method = RequestMethod.DELETE)
     public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
         return "Hello " + name;
     }
