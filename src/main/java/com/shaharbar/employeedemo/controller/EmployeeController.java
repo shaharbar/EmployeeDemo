@@ -26,11 +26,6 @@ public class EmployeeController {
 	@Autowired
 	EmployeeRepository employeeRepo;
 
-	@RequestMapping(value = "/greeting", method = RequestMethod.DELETE)
-	public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return "Hello " + name;
-	}
-
 	@RequestMapping(value = "/employeeDemo/{id}", method = RequestMethod.DELETE)
 	public Employee deactivateEmployee(@PathVariable("id") String id) {
 
