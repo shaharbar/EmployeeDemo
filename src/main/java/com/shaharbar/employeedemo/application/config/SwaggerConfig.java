@@ -1,4 +1,4 @@
-package com.shaharbar.employeedemo.config;
+package com.shaharbar.employeedemo.application.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.shaharbar.employeedemo.repository.EmployeeRepository;
+import com.shaharbar.employeedemo.application.repository.EmployeeRepository;
 
 // @Import(SpringDataRestConfiguration.class)
 @SpringBootApplication

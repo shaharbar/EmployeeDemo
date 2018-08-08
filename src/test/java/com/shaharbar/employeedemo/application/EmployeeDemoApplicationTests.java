@@ -1,4 +1,4 @@
-package com.shaharbar.employeedemo;
+package com.shaharbar.employeedemo.application;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

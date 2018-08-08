@@ -1,25 +1,31 @@
-package com.shaharbar.employeedemo.controller;
+package com.shaharbar.employeedemo.application.controller;
 
 import java.util.List;
 import java.util.Optional;
+
+import javax.xml.ws.http.HTTPException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.shaharbar.employeedemo.repository.EmployeeRepository;
+import com.shaharbar.employeedemo.application.repository.EmployeeRepository;
 import com.shaharbar.employeedemo.repository.dao.Employee;
 import com.shaharbar.employeedemo.repository.dao.StatusEnum;
 
 @RestController
 public class EmployeeController {
+	
+	final static String PASSWORD = "shaharbar";
 
 	final static Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
@@ -27,7 +33,10 @@ public class EmployeeController {
 	EmployeeRepository employeeRepo;
 
 	@RequestMapping(value = "/employeeDemo/{id}", method = RequestMethod.DELETE)
-	public Employee deactivateEmployee(@PathVariable("id") String id) {
+	public ResponseEntity<?> deactivateEmployee(@PathVariable("id") String id, @RequestHeader("Authorization") String auth) {
+		
+		if (!auth.equals(PASSWORD))
+			return new ResponseEntity<String>("ACCESS DENIED!!!", HttpStatus.UNAUTHORIZED);
 
 		logger.info("About to dectivate Employee ID: " + id);
 
@@ -44,7 +53,7 @@ public class EmployeeController {
 			logger.error("Could not find Employee: " + id);
 		}
 
-		return employee;
+		return new ResponseEntity<Employee>(employee, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/employeeDemo/activate/{id}", method = RequestMethod.PUT)

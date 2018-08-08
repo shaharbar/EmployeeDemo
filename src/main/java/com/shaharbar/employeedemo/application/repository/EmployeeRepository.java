@@ -1,4 +1,4 @@
-package com.shaharbar.employeedemo.repository;
+package com.shaharbar.employeedemo.application.repository;
 
 import java.util.List;
 
