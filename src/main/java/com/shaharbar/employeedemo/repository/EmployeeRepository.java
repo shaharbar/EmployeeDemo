@@ -1,8 +1,11 @@
-package com.shaharbar.employeedemo;
+package com.shaharbar.employeedemo.repository;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.shaharbar.employeedemo.repository.dao.Employee;
+import com.shaharbar.employeedemo.repository.dao.StatusEnum;
 
 public interface EmployeeRepository extends MongoRepository<Employee, String> {
 

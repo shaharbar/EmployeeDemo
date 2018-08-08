@@ -1,4 +1,4 @@
-package com.shaharbar.employeedemo;
+package com.shaharbar.employeedemo.repository.dao;
 
 import java.util.Date;
 
@@ -10,11 +10,19 @@ public class Employee {
 	private String id;
 
 	private String firstName;
-	private char middleInitial;
+	private String middleInitial = null;
 	private String lastName;
 	private Date dateOfBirth;
 	private Date dateOfEmployment;
-	private StatusEnum status;
+	private StatusEnum status = StatusEnum.ACTIVE;
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -24,11 +32,11 @@ public class Employee {
 		this.firstName = firstName;
 	}
 
-	public char getMiddleInitial() {
+	public String getMiddleInitial() {
 		return middleInitial;
 	}
 
-	public void setMiddleInitial(char middleInitial) {
+	public void setMiddleInitial(String middleInitial) {
 		this.middleInitial = middleInitial;
 	}
 

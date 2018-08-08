@@ -1,8 +1,10 @@
-package com.shaharbar.employeedemo;
+package com.shaharbar.employeedemo.application;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.shaharbar.employeedemo.repository.EmployeeRepository;
 
 // @Import(SpringDataRestConfiguration.class)
 @SpringBootApplication
