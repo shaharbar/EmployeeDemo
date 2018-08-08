@@ -3,8 +3,6 @@ package com.shaharbar.employeedemo.application.controller;
 import java.util.List;
 import java.util.Optional;
 
-import javax.xml.ws.http.HTTPException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shaharbar.employeedemo.application.repository.EmployeeRepository;
-import com.shaharbar.employeedemo.repository.dao.Employee;
-import com.shaharbar.employeedemo.repository.dao.StatusEnum;
+import com.shaharbar.employeedemo.application.repository.dao.Employee;
+import com.shaharbar.employeedemo.application.repository.dao.StatusEnum;
 
 @RestController
 public class EmployeeController {
